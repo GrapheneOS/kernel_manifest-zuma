@@ -3,26 +3,29 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
+  <remote  name="grapheneos"
+    fetch="https://github.com/GrapheneOS/"
+    revision="refs/heads/15" />
   <default revision="android-gs-shusky-5.15-android14-qpr3"
     remote="aosp" sync-j="4" />
 
-  <project path="aosp" name="kernel/common" groups="partner"/>
-  <project path="private/google-modules/soc/gs" name="kernel/google-modules/soc/gs" groups="partner">
+  <project path="aosp" name="kernel_common-5.15" groups="partner" remote="grapheneos"/>
+  <project path="private/google-modules/soc/gs" name="kernel_google-modules_soc_gs" groups="partner" remote="grapheneos">
     <linkfile dest="WORKSPACE" src="bazel.WORKSPACE"/>
     <linkfile dest="device.bazelrc" src="device.bazelrc"/>
     <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh"/>
   </project>
-  <project path="private/devices/google/shusky" name="kernel/devices/google/shusky" groups="partner,shusky">
+  <project path="private/devices/google/shusky" name="kernel_devices_google_shusky" groups="partner,shusky" remote="grapheneos">
     <linkfile dest="build_shusky.sh" src="build_shusky.sh"/>
     <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/shusky" src="dts/google"/>
     <linkfile dest=".d1.bazelrc" src="device.bazelrc"/>
   </project>
-  <project path="private/devices/google/akita" name="kernel/devices/google/akita" groups="partner,akita">
+  <project path="private/devices/google/akita" name="kernel_devices_google_akita" groups="partner,akita" remote="grapheneos">
     <linkfile dest="build_akita.sh" src="build_akita.sh"/>
     <linkfile dest=".d2.bazelrc" src="device.bazelrc"/>
     <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/akita" src="dts/google"/>
   </project>
-  <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner"/>
+  <project path="private/google-modules/amplifiers" name="kernel_google-modules_amplifiers-zuma" groups="partner" remote="grapheneos"/>
   <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner"/>
   <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner"/>
   <project path="private/google-modules/bluetooth/broadcom" name="kernel/google-modules/bluetooth/broadcom" groups="partner"/>
@@ -35,7 +38,7 @@
   <project path="private/google-modules/gxp/zuma" name="kernel/google-modules/gxp/zuma" groups="partner"/>
   <project path="private/google-modules/hdcp/samsung" name="kernel/google-modules/hdcp/samsung" groups="partner"/>
   <project path="private/google-modules/lwis" name="kernel/google-modules/lwis" groups="partner"/>
-  <project path="private/google-modules/power/reset" name="kernel/google-modules/power/reset" groups="partner"/>
+  <project path="private/google-modules/power/reset" name="kernel_google-modules_power_reset-zuma" groups="partner" remote="grapheneos"/>
   <project path="private/google-modules/sensors/hall_sensor" name="kernel/google-modules/sensors/hall_sensor" groups="partner"/>
   <project path="private/google-modules/touch/common" name="kernel/google-modules/touch/common" groups="partner"/>
   <project path="private/google-modules/touch/fts" name="kernel/google-modules/touch/fts_touch" groups="partner"/>
@@ -44,14 +47,14 @@
   <project path="private/google-modules/trusty" name="kernel/google-modules/trusty" groups="partner"/>
   <project path="private/google-modules/typec" name="kernel/google-modules/typec" groups="partner"/>
   <project path="private/google-modules/uwb/qorvo/dw3000" name="kernel/google-modules/uwb/qorvo/dw3000" groups="partner"/>
-  <project path="private/google-modules/uwb/qorvo/qm35" name="kernel/google-modules/uwb/qorvo/qm35" groups="partner"/>
+  <project path="private/google-modules/uwb/qorvo/qm35" name="kernel_google-modules_uwb_qorvo_qm35" groups="partner" remote="grapheneos"/>
   <project path="private/google-modules/video/gchips" name="kernel/google-modules/video/gchips" groups="partner"/>
   <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner"/>
-  <project path="private/google-modules/wlan/bcm4398" name="kernel/google-modules/wlan/bcmdhd/bcm4398" groups="partner"/>
-  <project path="private/google-modules/wlan/bcm4383" name="kernel/google-modules/wlan/bcmdhd/bcm4383" groups="partner"/>
+  <project path="private/google-modules/wlan/bcm4398" name="kernel_google-modules_wlan_bcmdhd_bcm4398" groups="partner" remote="grapheneos"/>
+  <project path="private/google-modules/wlan/bcm4383" name="kernel_google-modules_wlan_bcmdhd_bcm4383" groups="partner" remote="grapheneos"/>
   <project path="private/google-modules/wlan/wlan_ptracker" name="kernel/google-modules/wlan/wlan_ptracker" groups="partner"/>
   <project path="private/google-modules/i3c/exynos" name="kernel/google-modules/i3c/exynos" groups="partner"/>
-  <project path="build/kernel" name="kernel/build">
+  <project path="build/kernel" name="kernel_build-zuma" remote="grapheneos">
     <linkfile dest="tools/bazel" src="kleaf/bazel.sh"/>
     <linkfile dest="build/build.sh" src="build.sh"/>
     <linkfile dest="build/build_abi.sh" src="build_abi.sh"/>
