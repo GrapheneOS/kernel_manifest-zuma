@@ -32,7 +32,7 @@
   <project path="private/google-modules/gxp/zuma" name="kernel/google-modules/gxp/zuma" groups="partner" />
   <project path="private/google-modules/hdcp/samsung" name="kernel/google-modules/hdcp/samsung" groups="partner" />
   <project path="private/google-modules/lwis" name="kernel/google-modules/lwis" groups="partner" />
-  <project path="private/google-modules/power/reset" name="kernel/google-modules/power/reset" groups="partner" />
+  <project path="private/google-modules/power/reset" name="kernel_google-modules_power_reset-zuma" groups="partner" remote="grapheneos" />
   <project path="private/google-modules/touch/common" name="kernel/google-modules/touch/common" groups="partner" />
   <project path="private/google-modules/touch/fts" name="kernel/google-modules/touch/fts_touch" groups="partner" />
   <project path="private/google-modules/touch/goodix" name="kernel/google-modules/touch/goodix_touch" groups="partner" />
