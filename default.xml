@@ -3,7 +3,7 @@
 
   <remote  name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-gs-shusky-5.15-android14-d1"
+  <default revision="android-gs-shusky-5.15-android14-qpr1"
     remote="aosp" sync-j="4" />
 
   <project path="aosp" name="kernel/common" groups="partner" />
@@ -56,7 +56,6 @@
   <project path="kernel/configs" name="kernel/configs" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" groups="partner" />
-  <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="partner" />
   <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" groups="partner" />
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="partner" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" groups="partner" />
