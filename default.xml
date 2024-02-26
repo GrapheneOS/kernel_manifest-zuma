@@ -10,7 +10,7 @@
     remote="aosp" sync-j="4" />
 
   <project path="aosp" name="kernel_common-5.15" groups="partner" remote="grapheneos" />
-  <project path="private/google-modules/soc/gs" name="kernel/google-modules/soc/gs" groups="partner" >
+  <project path="private/google-modules/soc/gs" name="kernel_google-modules_soc_gs" groups="partner" remote="grapheneos" >
     <linkfile dest="WORKSPACE" src="bazel.WORKSPACE"/>
     <linkfile dest="device.bazelrc" src="device.bazelrc"/>
     <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh"/>
