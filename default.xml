@@ -54,7 +54,7 @@
   <project path="private/google-modules/wlan/bcm4383" name="kernel_google-modules_wlan_bcmdhd_bcm4383" groups="partner" remote="grapheneos"/>
   <project path="private/google-modules/wlan/wlan_ptracker" name="kernel/google-modules/wlan/wlan_ptracker" groups="partner"/>
   <project path="private/google-modules/i3c/exynos" name="kernel/google-modules/i3c/exynos" groups="partner"/>
-  <project path="build/kernel" name="kernel/build">
+  <project path="build/kernel" name="kernel_build-zuma" remote="grapheneos">
     <linkfile dest="tools/bazel" src="kleaf/bazel.sh"/>
     <linkfile dest="build/build.sh" src="build.sh"/>
     <linkfile dest="build/build_abi.sh" src="build_abi.sh"/>
