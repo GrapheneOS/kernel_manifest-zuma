@@ -26,7 +26,7 @@
     <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/akita" src="dts/google"/>
   </project>
   <project path="private/google-modules/amplifiers" name="kernel_google-modules_amplifiers-zuma" groups="partner" remote="grapheneos"/>
-  <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner"/>
+  <project path="private/google-modules/aoc" name="kernel_google-modules_aoc-zuma" groups="partner" remote="grapheneos"/>
   <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner"/>
   <project path="private/google-modules/bluetooth/broadcom" name="kernel/google-modules/bluetooth/broadcom" groups="partner"/>
   <project path="private/google-modules/bms" name="kernel/google-modules/bms" groups="partner"/>
