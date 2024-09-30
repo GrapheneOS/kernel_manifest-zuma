@@ -1,84 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
-  <remote  name="aosp"
-    fetch="https://android.googlesource.com/" />
-  <remote  name="grapheneos"
-    fetch="https://github.com/GrapheneOS/"
-    revision="refs/heads/14" />
-  <default revision="refs/tags/android-14.0.0_r0.137"
-    remote="aosp" sync-j="4" />
-
-  <project path="aosp" name="kernel_common-5.15" groups="partner" remote="grapheneos"/>
-  <project path="private/google-modules/soc/gs" name="kernel_google-modules_soc_gs" groups="partner" remote="grapheneos">
-    <linkfile dest="WORKSPACE" src="bazel.WORKSPACE"/>
-    <linkfile dest="device.bazelrc" src="device.bazelrc"/>
-    <linkfile dest="update_symbol_list.sh" src="update_symbol_list.sh"/>
+  <remote name="aosp" fetch="https://android.googlesource.com/"/>
+  <remote name="grapheneos" fetch="https://github.com/GrapheneOS/" revision="refs/tags/2024092900"/>
+  
+  <default remote="aosp" revision="refs/tags/android-14.0.0_r0.137" sync-j="4"/>
+  
+  <project name="kernel/configs" revision="07e726fb7d0dc50ba6d8dcbbbe8def8d5ee9c573" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137"/>
+  <project name="kernel/google-modules/aoc" path="private/google-modules/aoc" revision="d241999727b2dc3b7a1a3c269d76ceb7e5619223" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/aoc-ipc" path="private/google-modules/aoc_ipc" revision="37d0266aab3b33f6ae73ed59412579ba705fef0a" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/bluetooth/broadcom" path="private/google-modules/bluetooth/broadcom" revision="db61c0886d33320a102326a2fddafd11af4c04b4" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/bms" path="private/google-modules/bms" revision="2d13547372a20fdfe6b8e18e87627c37f409282f" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/display" path="private/google-modules/display" revision="d3fb181a9eb987b6f9c0a0aa890e3aeec069cad5" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/edgetpu/rio" path="private/google-modules/edgetpu/rio" revision="70a6dc6e1c10dba01c415853ea83944f2e308a75" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/fingerprint/fpc" path="private/google-modules/fingerprint/fpc" revision="40b4e3319f5ddfebddd249f1e1354facb0c1547e" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/gps/broadcom/bcm47765" path="private/google-modules/gps/broadcom/bcm47765" revision="f5699559aa3b99d177dd01fe6af7a6b01ae57c6f" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/gpu" path="private/google-modules/gpu" revision="c293ec2258a0be0095804e80a16b49a4c49067e2" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/gxp/zuma" path="private/google-modules/gxp/zuma" revision="afd158398de0c1c03316dc5f667e30cdeb6db762" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/hdcp/samsung" path="private/google-modules/hdcp/samsung" revision="a58fa84d6dfff96777b7acae1d99e64d8e250b7a" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/i3c/exynos" path="private/google-modules/i3c/exynos" revision="07de5ecce1b866bfce7d66dfe983eefbea5ec4a9" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/lwis" path="private/google-modules/lwis" revision="e876445f635623e647d590dcd6840d5f079f396a" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/nfc" path="private/google-modules/nfc" revision="710621816bb5731dd4caeb91264b79a164e830f7" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/sensors/hall_sensor" path="private/google-modules/sensors/hall_sensor" revision="a48405d33048ea02fa7d4b35e28c897a0a9b6ab3" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/touch/common" path="private/google-modules/touch/common" revision="78cc86a95aa677a67263e6d268bef565606b35ae" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/touch/fts_touch" path="private/google-modules/touch/fts" revision="73ed31e7f7c1dca0600b7417ae8b345f7ad6a929" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/touch/goodix_touch" path="private/google-modules/touch/goodix" revision="5b6595e689c9db41a7d0e9b4e5a6abb7905ff442" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/touch/sec_touch" path="private/google-modules/touch/sec" revision="3db2d063e70912cdbe53d590aadc61c1c0a0c675" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/trusty" path="private/google-modules/trusty" revision="78d5d68e86e0b0e5b86fcc2d864d022acb10f132" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/typec" path="private/google-modules/typec" revision="7c105574669e148b06d6d5adb21f0f282b50914e" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/uwb/qorvo/dw3000" path="private/google-modules/uwb/qorvo/dw3000" revision="cfd86ed41b8dd014dd7527c871a9844edac94000" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/video/gchips" path="private/google-modules/video/gchips" revision="a8c088189c41e909e97452b7e20c881bfdb05d73" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/google-modules/wlan/wlan_ptracker" path="private/google-modules/wlan/wlan_ptracker" revision="a8ae65c0ee01716d1fa3c28ea2f5d6290ecf7f5f" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner"/>
+  <project name="kernel/prebuilts/build-tools" path="prebuilts/kernel-build-tools" revision="e905be252a53d20c52bd9e59df3ff8fdd46b9eab" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" clone-depth="1"/>
+  <project name="kernel_build-zuma" path="build/kernel" remote="grapheneos" revision="b21687e39e20180777731bf182cc4d314e7062b5" upstream="refs/tags/2024092900" dest-branch="refs/tags/2024092900">
+    <linkfile src="kleaf/bazel.sh" dest="tools/bazel"/>
+    <linkfile src="build.sh" dest="build/build.sh"/>
+    <linkfile src="build_abi.sh" dest="build/build_abi.sh"/>
+    <linkfile src="build_test.sh" dest="build/build_test.sh"/>
+    <linkfile src="build_utils.sh" dest="build/build_utils.sh"/>
+    <linkfile src="config.sh" dest="build/config.sh"/>
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh"/>
+    <linkfile src="_setup_env.sh" dest="build/_setup_env.sh"/>
+    <linkfile src="multi-switcher.sh" dest="build/multi-switcher.sh"/>
+    <linkfile src="abi" dest="build/abi"/>
+    <linkfile src="static_analysis" dest="build/static_analysis"/>
   </project>
-  <project path="private/devices/google/shusky" name="kernel_devices_google_shusky" groups="partner,shusky" remote="grapheneos">
-    <linkfile dest="build_shusky.sh" src="build_shusky.sh"/>
-    <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/shusky" src="dts/google"/>
-    <linkfile dest=".d1.bazelrc" src="device.bazelrc"/>
+  <project name="kernel_common-5.15" path="aosp" remote="grapheneos" revision="fe237c201ef1eb52b631d0a6327fb1a7404bc08e" upstream="refs/tags/2024092900" dest-branch="refs/tags/2024092900" groups="partner"/>
+  <project name="kernel_devices_google_akita" path="private/devices/google/akita" remote="grapheneos" revision="532abd264fd2152132edcc562c3596d19a8d3e90" upstream="refs/tags/2024092900" dest-branch="refs/tags/2024092900" groups="partner,akita">
+    <linkfile src="build_akita.sh" dest="build_akita.sh"/>
+    <linkfile src="device.bazelrc" dest=".d2.bazelrc"/>
+    <linkfile src="dts/google" dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/akita"/>
   </project>
-  <project path="private/devices/google/akita" name="kernel_devices_google_akita" groups="partner,akita" remote="grapheneos">
-    <linkfile dest="build_akita.sh" src="build_akita.sh"/>
-    <linkfile dest=".d2.bazelrc" src="device.bazelrc"/>
-    <linkfile dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/akita" src="dts/google"/>
+  <project name="kernel_devices_google_shusky" path="private/devices/google/shusky" remote="grapheneos" revision="dfdb0dd2400835b31cee543655ba1ba5c8ba2080" upstream="refs/tags/2024092900" dest-branch="refs/tags/2024092900" groups="partner,shusky">
+    <linkfile src="build_shusky.sh" dest="build_shusky.sh"/>
+    <linkfile src="dts/google" dest="private/google-modules/soc/gs/arch/arm64/boot/dts/google/devices/shusky"/>
+    <linkfile src="device.bazelrc" dest=".d1.bazelrc"/>
   </project>
-  <project path="private/google-modules/amplifiers" name="kernel_google-modules_amplifiers-zuma" groups="partner" remote="grapheneos"/>
-  <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner"/>
-  <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner"/>
-  <project path="private/google-modules/bluetooth/broadcom" name="kernel/google-modules/bluetooth/broadcom" groups="partner"/>
-  <project path="private/google-modules/bms" name="kernel/google-modules/bms" groups="partner"/>
-  <project path="private/google-modules/display" name="kernel/google-modules/display" groups="partner"/>
-  <project path="private/google-modules/edgetpu/rio" name="kernel/google-modules/edgetpu/rio" groups="partner"/>
-  <project path="private/google-modules/fingerprint/fpc" name="kernel/google-modules/fingerprint/fpc" groups="partner"/>
-  <project path="private/google-modules/gps/broadcom/bcm47765" name="kernel/google-modules/gps/broadcom/bcm47765" groups="partner"/>
-  <project path="private/google-modules/gpu" name="kernel/google-modules/gpu" groups="partner"/>
-  <project path="private/google-modules/gxp/zuma" name="kernel/google-modules/gxp/zuma" groups="partner"/>
-  <project path="private/google-modules/hdcp/samsung" name="kernel/google-modules/hdcp/samsung" groups="partner"/>
-  <project path="private/google-modules/lwis" name="kernel/google-modules/lwis" groups="partner"/>
-  <project path="private/google-modules/power/reset" name="kernel_google-modules_power_reset-zuma" groups="partner" remote="grapheneos"/>
-  <project path="private/google-modules/sensors/hall_sensor" name="kernel/google-modules/sensors/hall_sensor" groups="partner"/>
-  <project path="private/google-modules/touch/common" name="kernel/google-modules/touch/common" groups="partner"/>
-  <project path="private/google-modules/touch/fts" name="kernel/google-modules/touch/fts_touch" groups="partner"/>
-  <project path="private/google-modules/touch/goodix" name="kernel/google-modules/touch/goodix_touch" groups="partner"/>
-  <project path="private/google-modules/touch/sec" name="kernel/google-modules/touch/sec_touch" groups="partner"/>
-  <project path="private/google-modules/trusty" name="kernel/google-modules/trusty" groups="partner"/>
-  <project path="private/google-modules/typec" name="kernel/google-modules/typec" groups="partner"/>
-  <project path="private/google-modules/uwb/qorvo/dw3000" name="kernel/google-modules/uwb/qorvo/dw3000" groups="partner"/>
-  <project path="private/google-modules/uwb/qorvo/qm35" name="kernel_google-modules_uwb_qorvo_qm35" groups="partner" remote="grapheneos"/>
-  <project path="private/google-modules/video/gchips" name="kernel/google-modules/video/gchips" groups="partner"/>
-  <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner"/>
-  <project path="private/google-modules/wlan/bcm4398" name="kernel_google-modules_wlan_bcmdhd_bcm4398" groups="partner" remote="grapheneos"/>
-  <project path="private/google-modules/wlan/bcm4383" name="kernel_google-modules_wlan_bcmdhd_bcm4383" groups="partner" remote="grapheneos"/>
-  <project path="private/google-modules/wlan/wlan_ptracker" name="kernel/google-modules/wlan/wlan_ptracker" groups="partner"/>
-  <project path="private/google-modules/i3c/exynos" name="kernel/google-modules/i3c/exynos" groups="partner"/>
-  <project path="build/kernel" name="kernel_build-zuma" remote="grapheneos">
-    <linkfile dest="tools/bazel" src="kleaf/bazel.sh"/>
-    <linkfile dest="build/build.sh" src="build.sh"/>
-    <linkfile dest="build/build_abi.sh" src="build_abi.sh"/>
-    <linkfile dest="build/build_test.sh" src="build_test.sh"/>
-    <linkfile dest="build/build_utils.sh" src="build_utils.sh"/>
-    <linkfile dest="build/config.sh" src="config.sh"/>
-    <linkfile dest="build/envsetup.sh" src="envsetup.sh"/>
-    <linkfile dest="build/_setup_env.sh" src="_setup_env.sh"/>
-    <linkfile dest="build/multi-switcher.sh" src="multi-switcher.sh"/>
-    <linkfile dest="build/abi" src="abi"/>
-    <linkfile dest="build/static_analysis" src="static_analysis"/>
+  <project name="kernel_google-modules_amplifiers-zuma" path="private/google-modules/amplifiers" remote="grapheneos" revision="e3a82db6132d300dc95c1f04c14eb934012027b1" upstream="refs/tags/2024092900" dest-branch="refs/tags/2024092900" groups="partner"/>
+  <project name="kernel_google-modules_power_reset-zuma" path="private/google-modules/power/reset" remote="grapheneos" revision="3c7a55445907ba9dad40e4b12d946e078941d232" upstream="refs/tags/2024092900" dest-branch="refs/tags/2024092900" groups="partner"/>
+  <project name="kernel_google-modules_soc_gs" path="private/google-modules/soc/gs" remote="grapheneos" revision="8c01a4e5a7aff8bd79826f495a59800e81e14bbc" upstream="refs/tags/2024092900" dest-branch="refs/tags/2024092900" groups="partner">
+    <linkfile src="bazel.WORKSPACE" dest="WORKSPACE"/>
+    <linkfile src="device.bazelrc" dest="device.bazelrc"/>
+    <linkfile src="update_symbol_list.sh" dest="update_symbol_list.sh"/>
   </project>
-  <project path="kernel/configs" name="kernel/configs"/>
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1"/>
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1"/>
-  <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" groups="partner" clone-depth="1"/>
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1"/>
-  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1"/>
-  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" clone-depth="1"/>
-  <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules"/>
-  <project path="external/bazel-skylib" name="platform/external/bazel-skylib"/>
-  <project path="external/python/absl-py" name="platform/external/python/absl-py"/>
-  <project path="external/stardoc" name="platform/external/stardoc"/>
-  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1"/>
-  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" clone-depth="1"/>
-  <project path="prebuilts/ndk-r23" name="toolchain/prebuilts/ndk/r23" clone-depth="1"/>
+  <project name="kernel_google-modules_uwb_qorvo_qm35" path="private/google-modules/uwb/qorvo/qm35" remote="grapheneos" revision="ed949c2359f5e96e66a3f268e3adbed5b2d5aa87" upstream="refs/tags/2024092900" dest-branch="refs/tags/2024092900" groups="partner"/>
+  <project name="kernel_google-modules_wlan_bcmdhd_bcm4383" path="private/google-modules/wlan/bcm4383" remote="grapheneos" revision="3fa7fe16606293ef769d0947ae3b23de47f5effd" upstream="refs/tags/2024092900" dest-branch="refs/tags/2024092900" groups="partner"/>
+  <project name="kernel_google-modules_wlan_bcmdhd_bcm4398" path="private/google-modules/wlan/bcm4398" remote="grapheneos" revision="bae520e5e759fecd6a5cc19d52065e51ba9aeb16" upstream="refs/tags/2024092900" dest-branch="refs/tags/2024092900" groups="partner"/>
+  <project name="platform/build/bazel_common_rules" path="build/bazel_common_rules" revision="b4f0919269ec78d28ec32a34ca90e107c3a41f4e" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137"/>
+  <project name="platform/external/bazel-skylib" path="external/bazel-skylib" revision="f998e5dc13c03f0eae9e373263d3afff0932c738" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137"/>
+  <project name="platform/external/python/absl-py" path="external/python/absl-py" revision="2f199605a9875340569e039657f8b4c72d51b84d" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137"/>
+  <project name="platform/external/stardoc" path="external/stardoc" revision="e83f522ee95419e55d2c5654aa6e0143beeef595" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137"/>
+  <project name="platform/prebuilts/bazel/linux-x86_64" path="prebuilts/bazel/linux-x86_64" revision="7bfbec9e829bbae6816d5f39aba345df76e627c1" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" clone-depth="1"/>
+  <project name="platform/prebuilts/boot-artifacts" path="prebuilts/boot-artifacts" revision="8e37f55fab9f0b633e1e916fddf48c3b363f2fb0" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" groups="partner" clone-depth="1"/>
+  <project name="platform/prebuilts/build-tools" path="prebuilts/build-tools" revision="c181f690fe9b76142b3203c2ab959b6299d4d1fd" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" clone-depth="1"/>
+  <project name="platform/prebuilts/clang/host/linux-x86" path="prebuilts/clang/host/linux-x86" revision="7775eb113f960bc69a780b621d03a715914d4bca" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" clone-depth="1"/>
+  <project name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" revision="f6d40532273c8bd628b960ecc0970c7294c8d891" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" clone-depth="1"/>
+  <project name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="649eec4416e2ed6298af49a56876772767a0e5ae" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" clone-depth="1"/>
+  <project name="platform/system/tools/mkbootimg" path="tools/mkbootimg" revision="615a1fced5f8e2755642d30357674d3bfa21b85e" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" clone-depth="1"/>
+  <project name="toolchain/prebuilts/ndk/r23" path="prebuilts/ndk-r23" revision="19ac7e4eded12adb99d4f613490dde6dd0e72664" upstream="refs/tags/android-14.0.0_r0.137" dest-branch="refs/tags/android-14.0.0_r0.137" clone-depth="1"/>
 </manifest>
