@@ -11,6 +11,7 @@
 
   <project path="aosp" name="kernel_common-5.15" groups="partner" remote="grapheneos">
     <linkfile dest="aosp-staging" src="." />
+    <linkfile dest="common" src="." />
   </project>
   <project path="private/google-modules/soc/gs" name="kernel_google-modules_soc_gs" groups="partner" remote="grapheneos">
     <linkfile dest="WORKSPACE" src="bazel.WORKSPACE"/>
